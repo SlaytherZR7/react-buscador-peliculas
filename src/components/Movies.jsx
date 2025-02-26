@@ -1,4 +1,9 @@
 const ListOfMovies = ({ movies }) => {
+  const placeholderImage = 'https://placehold.co/300x450?text=No+Image'
+
+  const handleImageError = (e) => {
+    e.target.src = placeholderImage
+  }
   return (
     <ul className='movies'>
       {
@@ -6,7 +11,7 @@ const ListOfMovies = ({ movies }) => {
               <li key={movie.id} className='movie'>
                 <h3>{movie.title}</h3>
                 <p>{movie.year}</p>
-                <img src={movie.image} alt={movie.title} />
+                <img src={movie.image} alt={movie.title} onError={handleImageError} />
               </li>
             ))
         }
