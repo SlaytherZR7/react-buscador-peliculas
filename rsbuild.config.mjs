@@ -4,7 +4,7 @@ import { pluginReact } from '@rsbuild/plugin-react'
 export default defineConfig({
   source: {
     define: {
-      'process.env.API_KEY': JSON.stringify(process.env.RSBUILD_PUBLIC_API_KEY)
+      'process.env.API_KEY': JSON.stringify(process.env.API_KEY)
     }
   },
   plugins: [pluginReact()]
